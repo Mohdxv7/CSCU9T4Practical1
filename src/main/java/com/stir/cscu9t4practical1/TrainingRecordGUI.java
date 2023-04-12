@@ -17,6 +17,11 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JTextField mins = new JTextField(2);
     private JTextField secs = new JTextField(2);
     private JTextField dist = new JTextField(4);
+    private JTextField terrain = new JTextField(8);
+    private JTextField tempo = new JTextField(8);
+    private JTextField Repetitions = new JTextField(2);
+    private JTextField Recovery = new JTextField(2);
+    private JTextField where = new JTextField(7);
     private JLabel labn = new JLabel(" Name:");
     private JLabel labd = new JLabel(" Day:");
     private JLabel labm = new JLabel(" Month:");
@@ -27,6 +32,12 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JLabel labdist = new JLabel(" Distance (km):");
     private JButton addR = new JButton("Add");
     private JButton lookUpByDate = new JButton("Look Up");
+    private JButton FindAllByDate = new JButton("FindAllByDate");
+
+    
+
+  
+
 
     private TrainingRecord myAthletes = new TrainingRecord();
 
@@ -68,6 +79,9 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         addR.addActionListener(this);
         add(lookUpByDate);
         lookUpByDate.addActionListener(this);
+        
+    
+    
         add(outputArea);
         outputArea.setEditable(false);
         setSize(720, 200);
@@ -117,7 +131,6 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         String message = myAthletes.lookupEntry(d, m, y);
         return message;
     }
-
     public void blankDisplay() {
         name.setText("");
         day.setText("");
